@@ -4,6 +4,7 @@ go:
     - tip
 
 install:
+        - go get -v -t ./...
     - pip install --user codecov
 
 after_success:
