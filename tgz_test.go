@@ -8,15 +8,7 @@ import (
 	"regexp"
 	"sort"
 	"testing"
-
-	. "gopkg.in/check.v1"
 )
-
-func Test(t *testing.T) { TestingT(t) }
-
-type SuiteTGZ struct{}
-
-var _ = Suite(&SuiteTGZ{})
 
 func TestExtractError(t *testing.T) {
 	for i, test := range [...]struct {
@@ -88,7 +80,7 @@ func TestExtract(t *testing.T) {
 			},
 		},
 	} {
-		com := Commentf("%d) tgz path = %s", i, test.tgz)
+		com := fmt.Sprintf("%d) tgz path = %s", i, test.tgz)
 
 		path, err := Extract(test.tgz)
 		if err != nil {
