@@ -40,7 +40,7 @@ func Extract(tgz string) (d string, err error) {
 
 	d, err = ioutil.TempDir(useDefaultTempDir, tmpPrefix)
 	if err != nil {
-		return "", nil
+		return "", err
 	}
 
 	tar, err := zipTarReader(f)
