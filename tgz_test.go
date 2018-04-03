@@ -84,7 +84,7 @@ func TestExtract(t *testing.T) {
 
 		path, err := Extract(test.tgz)
 		if err != nil {
-			t.Fatalf("%s: unexpected error extracting: %s", err)
+			t.Fatalf("%s: unexpected error extracting: %s", com, err)
 		}
 
 		obt, err := relativeTree(path)
